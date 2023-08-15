@@ -1,7 +1,7 @@
 import { ThrottlerGuard } from '@nestjs/throttler';
-import { TransformWishOffersInterceptor } from './../interceptors/transform-wish-offers-inreceptor';
-import { User } from 'src/users/entities/user.entity';
-import { Wish } from './../wishes/entities/wish.entity';
+import { TransformWishOffersInterceptor } from '../utils/interceptors/transform-wish-offers-inreceptor';
+import { User } from './entities/user.entity';
+import { Wish } from '../wishes/entities/wish.entity';
 import {
   Controller,
   Get,
@@ -16,9 +16,16 @@ import {
 import { UsersService } from './users.service';
 import { UpdateUserDto } from './dto/update-user.dto';
 import { NotFoundException } from '@nestjs/common/exceptions';
-import { USER_DOES_NOT_EXIST } from 'src/utils/constants/users';
+import { JwtGuard } from '../auth/guards/jwt.guard';
+import { USER_DOES_NOT_EXIST } from '../utils/constants/users';
+import { TransformOwnerInterceptor } from '../utils/interceptors/transform-owner-interceptor';
+import { TransformPrivateUserInterceptor } from '../utils/interceptors/transform-private-user-interceptor';
+import { TransformPublicUserInterceptor } from '../utils/interceptors/transform-public-user-interceptor';
+
 @Controller('users')
+@UseGuards(JwtGuard)
 @UseGuards(ThrottlerGuard)
+@UseInterceptors(TransformPrivateUserInterceptor)
 export class UsersController {
   constructor(private readonly usersService: UsersService) {}
 
@@ -47,12 +54,14 @@ export class UsersController {
   }
 
   @Get('me/wishes')
+  @UseInterceptors(TransformOwnerInterceptor<Wish[]>)
   @UseInterceptors(TransformWishOffersInterceptor)
   async getAuthUserWishes(@Req() { user }: { user: User }): Promise<Wish[]> {
     return await this.usersService.getUserWishes(Number(user.id));
   }
 
   @Get(':username')
+  @UseInterceptors(TransformPublicUserInterceptor)
   async getUserByUsername(@Param('username') username: string): Promise<User> {
     const user = await this.usersService.findByUsername(username);
 
@@ -64,6 +73,7 @@ export class UsersController {
   }
 
   @Get(':username/wishes')
+  @UseInterceptors(TransformOwnerInterceptor<Wish[]>)
   @UseInterceptors(TransformWishOffersInterceptor)
   async getUserWishes(@Param('username') username: string): Promise<Wish[]> {
     const user = await this.usersService.findByUsername(username);

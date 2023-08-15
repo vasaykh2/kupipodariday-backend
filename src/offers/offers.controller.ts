@@ -1,10 +1,22 @@
-import { Controller, Get, Param, Body, Req, Post } from '@nestjs/common';
+import { ThrottlerGuard } from '@nestjs/throttler';
+import {
+  Controller,
+  Get,
+  UseGuards,
+  Param,
+  Body,
+  Req,
+  Post,
+} from '@nestjs/common';
 import { OffersService } from './offers.service';
 import { CreateOfferDto } from './dto/create-offer.dto';
+import { JwtGuard } from 'src/auth/guards/jwt.guard';
 import { Offer } from './entities/offer.entity';
 import { User } from 'src/users/entities/user.entity';
 
 @Controller('offers')
+@UseGuards(JwtGuard)
+@UseGuards(ThrottlerGuard)
 export class OffersController {
   constructor(private readonly offersService: OffersService) {}
 
