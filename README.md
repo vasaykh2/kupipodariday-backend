@@ -27,8 +27,11 @@
 Для работы сервера, необходимо создать и положить в корневую папку файл .env, заполненный по шаблону:
 
   POSTGRES_HOST='localhost'
+  
   POSTGRES_PORT=5432
+  
   POSTGRES_USER=’student’
+  
   POSTGRES_PASSWORD=*****
   POSTGRES_DB=’kupipodariday’
   POSTGRES_SYNCHRONIZE=true
@@ -42,4 +45,4 @@ npm run start:dev
 Скрипты – см. в файле package.json в корне проекта.
 
 
-* [Ссылка на "kupipodariday-backend" в GitHub](https://github.com/vasaykh2/kupipodariday-backend)
+** [Ссылка на "kupipodariday-backend" в GitHub](https://github.com/vasaykh2/kupipodariday-backend)
