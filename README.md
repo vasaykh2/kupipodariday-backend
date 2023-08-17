@@ -6,9 +6,11 @@
 - Методы
 - Использование
 
+
 **Интро**
 
 Это студенческая работа 15 месяца курса "Web-разработчик плюс" Яндек.Практикума. REST-API для фронтэнд части: «kupipodariday-frontend».
+
 
 **Методы**
 
@@ -19,6 +21,7 @@
 - Создана база в PostgreSQL – kupipodariday. БД подключена к проекту
 - посредством TypeORM.
 - С помощью Nest CLI сгенерирован каркас API: пользователи (users), подарки (wishes), списки желаний (wishlists), предложения скинуться на подарок (offers).
+
 
 **Использование**
 
@@ -40,5 +43,6 @@
 npm run start:dev
 
 Скрипты – см. в файле package.json в корне проекта.
+
 
 [Ссылка на "kupipodariday-backend" в GitHub](https://github.com/vasaykh2/kupipodariday-backend)
