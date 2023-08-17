@@ -25,7 +25,7 @@
 
 ###**Использование**
 
-После клонирования проекта нужно инициировать зависимости в нем: npm i
+**После клонирования проекта нужно инициировать зависимости в нем: npm i**
 
 Для работы сервера, необходимо создать и положить в корневую папку файл .env, заполненный по шаблону:
 
@@ -45,4 +45,4 @@ npm run start:dev
 Скрипты – см. в файле package.json в корне проекта.
 
 
-**[Ссылка на "kupipodariday-backend" в GitHub](https://github.com/vasaykh2/kupipodariday-backend)**
+[Ссылка на "kupipodariday-backend" в GitHub](https://github.com/vasaykh2/kupipodariday-backend)**
