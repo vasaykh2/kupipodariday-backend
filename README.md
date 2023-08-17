@@ -36,7 +36,7 @@
   POSTGRES_SYNCHRONIZE=true  
   SERVER_PORT=3000  
   JWT_SECRET=’some_string’  
-  JWT_EXPIERS=24h  
+  JWT_EXPIERS=48h  
   
 **Запустить проект:  npm run start:dev.**
 
