@@ -29,12 +29,12 @@
   POSTGRES_HOST='localhost'  
   POSTGRES_PORT=5432  
   POSTGRES_USER=’student’  
-  POSTGRES_PASSWORD=*****
-  POSTGRES_DB=’kupipodariday’
-  POSTGRES_SYNCHRONIZE=true
-  SERVER_PORT=3000
-  JWT_SECRET=’some_string’
-  JWT_EXPIERS=24h
+  POSTGRES_PASSWORD=*****  
+  POSTGRES_DB=’kupipodariday’  
+  POSTGRES_SYNCHRONIZE=true  
+  SERVER_PORT=3000  
+  JWT_SECRET=’some_string’  
+  JWT_EXPIERS=24h  
   
 Запустить проект:
 npm run start:dev
