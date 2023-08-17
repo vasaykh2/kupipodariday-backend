@@ -7,7 +7,7 @@
 - Использование
 
 
-**Интро**
+### **Интро**
 
 Это студенческая работа 15 месяца курса "Web-разработчик плюс" Яндек.Практикума. REST-API для фронтэнд части: «kupipodariday-frontend».
 
@@ -45,4 +45,4 @@ npm run start:dev
 Скрипты – см. в файле package.json в корне проекта.
 
 
-[Ссылка на "kupipodariday-backend" в GitHub](https://github.com/vasaykh2/kupipodariday-backend)
+**[Ссылка на "kupipodariday-backend" в GitHub](https://github.com/vasaykh2/kupipodariday-backend)
