@@ -42,5 +42,3 @@
 
 **Скрипты – см. в файле package.json в корне проекта.**
 
-
-[Ссылка на "kupipodariday-backend" в GitHub](https://github.com/vasaykh2/kupipodariday-backend)
